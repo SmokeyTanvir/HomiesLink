@@ -1,0 +1,18 @@
+<h2 class="text-2xl font-semibold mb-4">Create Post</h2>
+    <form action="{% url 'create_post' %}" method="POST" class="border border-gray-200 rounded-lg shadow-md p-4" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="flex items-center space-x-4">
+        <img class="h-12 w-12 rounded-full" src="{{ request.user.profile.profile_pic.url }}" alt="Profile Picture">
+        <div class="flex flex-col w-full">
+          <textarea class="w-full bg-white rounded-lg shadow-md p-4 text-gray-700" placeholder="Write your post..." name="post"></textarea>
+          <div class="mt-4">
+            <label for="postImage" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg cursor-pointer">
+              <i class="fas fa-image mr-2"></i>
+              Upload Image
+            </label>
+            <input type="file" id="postImage" name="post_image" class="hidden">
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg" value="post">
+    </form>

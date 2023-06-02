@@ -1,0 +1,41 @@
+{% extends 'HomieCircle/layout.html' %}
+
+
+
+{% block head %}
+  <title>Profile</title>
+{% endblock %}
+{% block body %}
+<div class="bg-white rounded-lg shadow-lg p-6">
+  <div class="flex items-center mb-4">
+    <div class="flex-shrink-0">
+      <img class="h-20 w-20 rounded-full" src="{{ user.profile_pic.url }}" alt="Profile Picture">
+    </div>
+    <div class="ml-6">
+      <h2 class="text-2xl font-semibold">{{ user.name }}</h2>
+      <p class="text-gray-600">Software Engineer</p>
+    </div>
+  </div>
+  <div class="border-t border-gray-200 mt-6 pt-6">
+    <h3 class="text-xl font-semibold mb-4">About Me</h3>
+    <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dapibus ligula id nulla aliquet, at pharetra eros vulputate. Proin lobortis augue id arcu consectetur, id dictum sapien tincidunt.</p>
+  </div>
+  <div class="border-t border-gray-200 mt-6 pt-6">
+    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+    <ul class="mt-2">
+      <li class="flex items-center text-gray-600 mb-2">
+        <svg class="h-4 w-4 mr-2 fill-current text-gray-400" viewBox="0 0 20 20">
+          <path d="M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+        </svg>
+        {{ user.email }}
+      </li>
+      <li class="flex items-center text-gray-600">
+        <svg class="h-4 w-4 mr-2 fill-current text-gray-400" viewBox="0 0 20 20">
+          <path d="M10 1a9 9 0 1 0 0 18A9 9 0 0 0 10 1zm0 16a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+        </svg>
+        +1 123-456-7890
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
